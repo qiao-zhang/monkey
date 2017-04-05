@@ -17,6 +17,8 @@ let add = fn(x, y) {
 
 let result = add(five, ten);
 `,
+		`!-/*67`,
+		`3 < x > 9`,
 	}
 
 	results := [][]struct {
@@ -72,6 +74,20 @@ let result = add(five, ten);
 			{token.RPAREN, ")"},
 			{token.SEMICOLON, ";"},
 			{token.EOF, ""},
+		},
+		{
+			{token.BANG, "!"},
+			{token.MINUS, "-"},
+			{token.SLASH, "/"},
+			{token.ASTERISK, "*"},
+			{token.INT, "67"},
+		},
+		{
+			{token.INT, "3"},
+			{token.LT, "<"},
+			{token.IDENT, "x"},
+			{token.GT, ">"},
+			{token.INT, "9"},
 		},
 	}
 
