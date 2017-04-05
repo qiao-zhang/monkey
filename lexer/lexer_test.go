@@ -24,6 +24,8 @@ let result = add(five, ten);
 } else {
   return false;
 }`,
+		`134 == 134;
+17766 != 983;`,
 	}
 
 	results := [][]struct {
@@ -112,6 +114,16 @@ let result = add(five, ten);
 			{token.FALSE, "false"},
 			{token.SEMICOLON, ";"},
 			{token.RBRACE, "}"},
+		},
+		{
+			{token.INT, "134"},
+			{token.EQ, "=="},
+			{token.INT, "134"},
+			{token.SEMICOLON, ";"},
+			{token.INT, "17766"},
+			{token.NOT_EQ, "!="},
+			{token.INT, "983"},
+			{token.SEMICOLON, ";"},
 		},
 	}
 
